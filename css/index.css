@@ -1,3 +1,53 @@
-body {
-  background-color: #333;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+:root {
+  --primary_font: 'Roboto Slab', serif;;
+  --secondary_font: 'Roboto', sans-serif;;
+
+  --primary_color: #c90000;
+  --secondary_color: #313131;
+  --light_gray_color: #7a7a7a;
+  --dark_gray_color: #424242;
+  --background_color: #ffffff;
+
+  --lateral: 0.5rem;
+  --vertical: 0.5rem;
+}
+
+@media (min-width: 320px) {
+  :root {
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+  }
+}
+
+html, body {
+  background-color: var(--background_color);
+  font-size: 16px;
+  font-family: var(--secondary_font);
 }
