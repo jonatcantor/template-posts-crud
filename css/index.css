@@ -8,6 +8,8 @@
 }
 
 :root {
+  --max_width: 100vw;
+
   --mobile: 1;
   --no_mobile: calc(1 - var(--mobile));
 
@@ -31,6 +33,7 @@
   --vertical: 1rem;
 
   --header_zindex: 1000;
+  --header_lists_zindex: calc(var(--header_zindex) + 1);
   --header_lists_columns: 1fr;
   --header_content_columns: 1fr max-content;
   --header_vertical: calc(var(--vertical) * 0.3);
@@ -62,7 +65,9 @@
     --background_to_primary_color: var(--primary_color);
     
     --header_lists_columns: max-content max-content;
-    --header_content_columns: 1fr 1fr;
+    --header_content_columns: max-content 1fr;
+
+    --header_lists_zindex: calc(var(--header_zindex) - 1);
     
     --header_menu_separator_d: inline-block;
     
@@ -86,6 +91,7 @@
 
 @media (min-width: 1920px) {
   :root {
+    --max_width: 1920px;
   }
 }
 
@@ -93,6 +99,8 @@ html, body {
   background-color: var(--background_color);
   font-size: 16px;
   font-family: var(--secondary_font);
+  max-width: var(--max_width);
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -129,7 +137,7 @@ button {
   grid-auto-rows: min-content;
   row-gap: 2rem;
 
-  z-index: calc(var(--header_zindex) + 1);
+  z-index: var(--header_lists_zindex);
   top: calc((2rem + 1rem + var(--header_vertical) * 2) * var(--mobile));
   background-color: var(--background_color);
   padding: calc(var(--vertical) * var(--mobile)) calc(var(--lateral) * var(--mobile));
@@ -145,11 +153,15 @@ button {
 
   position: fixed;
   top: calc(var(--advertise_lg_top) * var(--no_mobile));
-  left: 0;
+  left: calc(100vw - var(--max_width));
   width: 100%;
   padding: var(--header_vertical) var(--lateral);
 
   background-color: var(--background_color);
+
+  transform: translateX(calc((100vw - var(--max_width)) / -2));
+
+  max-width: var(--max_width);
 }
 
 .header__logo {
@@ -240,7 +252,10 @@ button {
 
   position: absolute;
   top: var(--advertise_lg_top);
-  right: var(--lateral);
+  left: calc((50vw - (var(--max_width) - var(--max_width))) * var(--no_mobile) + (var(--mobile) * var(--lateral)));
+  transform: translateX(calc((var(--max_width) - var(--max_width)) / 2 - (var(--lateral) * var(--no_mobile))));
+
+  max-width: calc(var(--max_width) / 2 + (var(--max_width) * var(--mobile)));
 }
 
 .tag__list__box {
