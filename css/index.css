@@ -51,3 +51,8 @@ html, body {
   font-size: 16px;
   font-family: var(--secondary_font);
 }
+
+.header {
+  padding: var(--vertical) var(--lateral);
+  
+}
