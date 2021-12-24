@@ -11,42 +11,136 @@
   <title>Template posts | Jonathan Cantor</title>
 </head>
 <body>
-  <header>
-    <div>
-      <nav></nav>
+  <header class="header">
+    <div class="header__lists">
+      <nav>
+        <ul class="stick__list">
+          <li class="stick__list__element"><a href="#">Home</a></li>
+          <li class="stick__list__element"><a href="#">About Us</a></li>
+          <li class="stick__list__element"><a href="#">Demo Page</a></li>
+          <li class="stick__list__element"><a href="#">Contact Page</a></li>
+        </ul>
+      </nav>
       
-      <nav></nav>
+      <nav>
+        <ul class="stick__list">
+          <spam class="stick__text">Subscribe:</spam>
+          <li class="stick__list__element"><a href="#">Posts</a></li>
+          <li class="stick__list__element"><a href="#">Comments</a></li>
+          <li class="stick__list__element"><a href="#">Email</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <div>
-      <div></div>
+    <div class="header__content">
+      <div class="header__logo">
+        <h1 class="header__title"><a href="#">Web Site Name</a></h1>
+        <span class="header__description"><a href="#">Web Site Description</a></span>
+      </div>
 
-      <div></div>
+      <button onclick="altClassFromSelector('.header__lists', 'header__lists__open')" class="header__button"><svg viewBox="0 0 100 80"><rect width="100" height="20"></rect><rect y="30" width="100" height="20"></rect><rect y="60" width="100" height="20"></rect></svg></button>
+    </div>
+
+    <div class="advertise advertise--lg">
+      Advertise Here
     </div>
   </header>
 
-  <nav></nav>
+  <nav class="tag__list__box">
+    <ul class="tag__list">
+      <li class="tag__list__element"><a href="#">Advertising</a></li>
+      <li class="tag__list__element"><a href="#">Entertainment</a></li>
+      <li class="tag__list__element"><a href="#">Fashion</a></li>
+      <li class="tag__list__element"><a href="#">Lifestyle</a></li>
+      <li class="tag__list__element"><a href="#">Pictures</a></li>
+      <li class="tag__list__element"><a href="#">Videos</a></li>
+    </ul>
+  </nav>
 
   <main>
-    <article></article>
+    <article>
+      <h2>Post title</h2>
+      <p>Date</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
+      <a href="">Link</a>
+    </article>
 
-    <article></article>
+    <article>
+      <h2>Post title</h2>
+      <p>Date</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
+      <a href="">Link</a>
+    </article>
 
-    <article></article>
+    <article>
+      <h2>Post title</h2>
+      <p>Date</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
+      <a href="">Link</a>
+    </article>
 
-    <article></article>
+    <article>
+      <h2>Post title</h2>
+      <p>Date</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
+      <a href="">Link</a>
+    </article>
   </main>
 
   <aside>
-    <div></div>
+    <div>
+      <div>
+        <spam>Advertise Here</spam>
+        <spam>125x125</spam>
+      </div>
 
-    <form></form>
+      <div>
+        <spam>Advertise Here</spam>
+        <spam>125x125</spam>
+      </div>
 
-    <div></div>
+      <div>
+        <spam>Advertise Here</spam>
+        <spam>125x125</spam>
+      </div>
 
-    <div></div>
+      <div>
+        <spam>Advertise Here</spam>
+        <spam>125x125</spam>
+      </div>
+    </div>
 
-    <div></div>
+    <form>
+      <input type="search" value="">
+      <input type="submit" value="Search">
+    </form>
+
+    <section>
+      <h4>Popular Posts</h4>
+      <ul>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Flickr Photos</h4>
+      <ul>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+        <li><a href="">Popular Post</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Featured Video</h4>
+      <div>Video</div>
+    </section>
   </aside>
 
   <script src="./js/index.js"></script>
