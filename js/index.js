@@ -1,5 +1,13 @@
 const header = document.querySelector('.header');
 
+const altClassFromSelector = (selector, className) => {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach((element) => {
+      element.classList.toggle(className);
+  });
+}
+
 const checkViewport = () => {
   if(!isInViewport(header)) {
     header.classList.add('header__hidde');

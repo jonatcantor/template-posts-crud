@@ -24,10 +24,13 @@
   --light_gray_color: #b8b8b8;
   --dark_gray_color: #555555;
   --background_color: #ffffff;
+  --primary_to_transparent_color: var(--primary_color);
+  --background_to_primary_color: var(--background_color);
 
   --lateral: 0.5rem;
   --vertical: 1rem;
 
+  --header_zindex: 1000;
   --header_lists_columns: 1fr;
   --header_content_columns: 1fr max-content;
   --header_vertical: calc(var(--vertical) * 0.3);
@@ -38,6 +41,7 @@
   --adversise_full_to_mid_width: calc(100% - var(--lateral) * 2);
 
   --stick_list_grid_direction: row;
+  --stick_list_columns: 1fr;
 }
 
 @media (min-width: 320px) {
@@ -54,6 +58,8 @@
     --block_mobile_d: none;
     --grid_desktop_d: grid;
 
+    --primary_to_transparent_color: transparent;
+    --background_to_primary_color: var(--primary_color);
     
     --header_lists_columns: max-content max-content;
     --header_content_columns: 1fr 1fr;
@@ -64,6 +70,7 @@
     --adversise_full_to_mid_width: 50%;
 
     --stick_list_grid_direction: column;
+    --stick_list_columns: max-content;
   }
 }
 
@@ -117,6 +124,18 @@ button {
   width: 100%;
 }
 
+.header__lists.header__lists__open {
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: 2rem;
+
+  z-index: calc(var(--header_zindex) + 1);
+  top: calc(var(--advertise_lg_top) * var(--mobile));
+  background-color: var(--background_color);
+  padding: calc(var(--vertical) * var(--mobile)) calc(var(--lateral) * var(--mobile));
+  min-height: calc(100vh * var(--mobile));
+}
+
 .header__content {
   display: grid;
   grid-template-columns: var(--header_content_columns);
@@ -134,7 +153,7 @@ button {
 
 .header__hidde .header__content {
   top: 0;
-  z-index: 1000;
+  z-index: var(--header_zindex);
 }
 
 .header__title a{
@@ -159,12 +178,26 @@ button {
   display: grid;
   grid-auto-flow: var(--stick_list_grid_direction);
   list-style-type: none;
-  grid-auto-columns: max-content;
+  grid-auto-columns: var(--stick_list_columns);
+  row-gap: 1rem;
 }
 
 .stick__text {
   margin-right: calc(1rem * var(--no_mobile));
   font-weight: bold;
+}
+
+.stick__list__element {
+  padding: calc(0.5rem * var(--mobile)) calc(1rem * var(--mobile));
+  cursor: pointer;
+}
+
+.stick__list__element:hover {
+  background-color: var(--primary_to_transparent_color);
+}
+
+.stick__list__element:hover a {
+  color: var(--background_to_primary_color);
 }
 
 .stick__list__element a {
