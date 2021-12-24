@@ -130,7 +130,7 @@ button {
   row-gap: 2rem;
 
   z-index: calc(var(--header_zindex) + 1);
-  top: calc((2rem + 1rem) + var(--header_vertical) * 2 * var(--mobile));
+  top: calc((2rem + 1rem + var(--header_vertical) * 2) * var(--mobile));
   background-color: var(--background_color);
   padding: calc(var(--vertical) * var(--mobile)) calc(var(--lateral) * var(--mobile));
   min-height: calc(100vh * var(--mobile));
