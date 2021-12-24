@@ -130,7 +130,7 @@ button {
   row-gap: 2rem;
 
   z-index: calc(var(--header_zindex) + 1);
-  top: calc(var(--advertise_lg_top) * var(--mobile));
+  top: calc((2rem + 1rem) + var(--header_vertical) * 2 * var(--mobile));
   background-color: var(--background_color);
   padding: calc(var(--vertical) * var(--mobile)) calc(var(--lateral) * var(--mobile));
   min-height: calc(100vh * var(--mobile));
@@ -141,14 +141,19 @@ button {
   grid-template-columns: var(--header_content_columns);
   justify-content: space-between;
   row-gap: 1.5rem;
+  align-items: start;
 
   position: fixed;
   top: calc(var(--advertise_lg_top) * var(--no_mobile));
   left: 0;
   width: 100%;
-  padding: var(--vertical) var(--lateral);
+  padding: var(--header_vertical) var(--lateral);
 
   background-color: var(--background_color);
+}
+
+.header__logo {
+  min-width: max-content;
 }
 
 .header__hidde .header__content {
@@ -156,8 +161,12 @@ button {
   z-index: var(--header_zindex);
 }
 
-.header__title a{
-  font-size: 2.3rem;
+.header__title {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.header__title a {
   color: var(--secondary_color);
 }
 
@@ -172,6 +181,7 @@ button {
   display: var(--block_mobile_d);
   cursor: pointer;
   width: 1.5rem;
+  margin-top: calc(2rem * 0.3);
 }
 
 .stick__list {
