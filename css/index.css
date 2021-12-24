@@ -45,6 +45,8 @@
 
   --stick_list_grid_direction: row;
   --stick_list_columns: 1fr;
+
+  --main_lateral: 2rem;
 }
 
 @media (min-width: 320px) {
@@ -115,6 +117,7 @@ button {
   background: none;
 }
 
+/*------------------------------ .header --------------------------*/
 .header {
   display: grid;
   row-gap: 1.5rem;
@@ -196,6 +199,7 @@ button {
   margin-top: calc(2rem * 0.3);
 }
 
+/*------------------------------ .stick__list --------------------------*/
 .stick__list {
   display: grid;
   grid-auto-flow: var(--stick_list_grid_direction);
@@ -234,6 +238,7 @@ button {
   color: var(--secondary_color);
 }
 
+/*------------------------------ .advertise --------------------------*/
 .advertise {
   background-color: var(--light_gray_color);
   color: var(--dark_gray_color);
@@ -258,6 +263,7 @@ button {
   max-width: calc(var(--max_width) / 2 + (var(--max_width) * var(--mobile)));
 }
 
+/*------------------------------ .tag__list --------------------------*/
 .tag__list__box {
   background-color: var(--secondary_color);
   max-width: 100vw;
@@ -277,4 +283,13 @@ button {
 
 .tag__list__element a {
   color: var(--background_color);
+}
+
+/*------------------------------ .main --------------------------*/
+.main {
+  padding: var(--vertical) var(--main_lateral);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  gap: 2.5rem 2rem;
 }
