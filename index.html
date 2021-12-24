@@ -12,46 +12,48 @@
 </head>
 <body>
   <header class="header">
-    <div>
+    <div class="header__lists">
       <nav>
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Demo Page</li>
-          <li>Contact Page</li>
+        <ul class="stick__list">
+          <li class="stick__list__element"><a href="#">Home</a></li>
+          <li class="stick__list__element"><a href="#">About Us</a></li>
+          <li class="stick__list__element"><a href="#">Demo Page</a></li>
+          <li class="stick__list__element"><a href="#">Contact Page</a></li>
         </ul>
       </nav>
       
       <nav>
-        Subscribe:
-        <ul>
-          <li>Posts</li>
-          <li>Comments</li>
-          <li>Email</li>
+        <ul class="stick__list">
+          <spam class="stick__text">Subscribe:</spam>
+          <li class="stick__list__element"><a href="#">Posts</a></li>
+          <li class="stick__list__element"><a href="#">Comments</a></li>
+          <li class="stick__list__element"><a href="#">Email</a></li>
         </ul>
       </nav>
     </div>
 
-    <div>
+    <div class="header__content">
       <div>
-        <h1>Web Site Name</h1>
-        <span>Web Site Description</span>
+        <h1 class="header__title"><a href="#">Web Site Name</a></h1>
+        <span class="header__description"><a href="#">Web Site Description</a></span>
       </div>
 
-      <div>
-        Advertise Here
-      </div>
+      <button class="header__button"><svg viewBox="0 0 100 80"><rect width="100" height="20"></rect><rect y="30" width="100" height="20"></rect><rect y="60" width="100" height="20"></rect></svg></button>
+    </div>
+
+    <div class="advertise advertise--lg">
+      Advertise Here
     </div>
   </header>
 
-  <nav>
-    <ul>
-      <li>Advertising</li>
-      <li>Entertainment</li>
-      <li>Fashion</li>
-      <li>Lifestyle</li>
-      <li>Pictures</li>
-      <li>Videos</li>
+  <nav class="tag__list__box">
+    <ul class="tag__list">
+      <li class="tag__list__element"><a href="#">Advertising</a></li>
+      <li class="tag__list__element"><a href="#">Entertainment</a></li>
+      <li class="tag__list__element"><a href="#">Fashion</a></li>
+      <li class="tag__list__element"><a href="#">Lifestyle</a></li>
+      <li class="tag__list__element"><a href="#">Pictures</a></li>
+      <li class="tag__list__element"><a href="#">Videos</a></li>
     </ul>
   </nav>
 
