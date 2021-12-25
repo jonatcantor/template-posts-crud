@@ -303,7 +303,7 @@ img {
   padding: var(--vertical) var(--main_lateral);
   display: grid;
   grid-template-columns: var(--main_columns);
-  grid-auto-rows: min-content;
+  grid-auto-rows: 1fr;
   gap: 2.5rem 2rem;
 }
 
@@ -332,6 +332,11 @@ img {
 
 .post__title {
   font-size: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post__title__loading {
@@ -351,6 +356,11 @@ img {
 
 .post__excerpt {
   font-size: 1.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post__excerpt__loading {
@@ -365,6 +375,7 @@ img {
   font-size: 1.1rem;
   font-weight: bold;
   text-align: var(--center_to_left);
+  margin-top: auto;
 }
 
 .post__link__loading {
