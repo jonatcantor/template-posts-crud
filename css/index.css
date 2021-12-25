@@ -451,6 +451,9 @@ img {
 .aside__section {
   padding: 0 1rem;
 }
+.aside__section:last-child {
+  padding: 0 1rem var(--vertical) 1rem;
+}
 
 .aside__title {
   margin-bottom: 0.5rem;

@@ -122,13 +122,7 @@
 
       <section class="aside__section">
         <h4 class="aside__title">Popular Posts</h4>
-        <ul class="aside__posts">
-          <li><a href="">Popular Post</a></li>
-          <li><a href="">Popular Post</a></li>
-          <li><a href="">Popular Post</a></li>
-          <li><a href="">Popular Post</a></li>
-          <li><a href="">Popular Post</a></li>
-        </ul>
+        <ul class="aside__posts"></ul>
       </section>
 
       <section class="aside__section">
@@ -210,6 +204,22 @@
         postDOM.appendChild(postLinkDOM);
 
         main.appendChild(postDOM);
+      });
+
+      const asidePosts = document.querySelector('.aside__posts');
+
+      const popularPosts = posts.slice(0, 5);
+
+      popularPosts.forEach((post) => {
+        const postLiDOM = document.createElement('li');
+
+        const postLinkDOM = document.createElement('a');
+        postLinkDOM.textContent = post.title;
+        postLinkDOM.href = './posts.html/?id=' + post.id;
+
+        postLiDOM.appendChild(postLinkDOM);
+
+        asidePosts.appendChild(postLiDOM);
       });
     })();
   </script>
