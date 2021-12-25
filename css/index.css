@@ -142,6 +142,18 @@ img {
   display: block;
 }
 
+[class*='__loading'] {
+  background: rgb(177,177,177);
+  background: linear-gradient(90deg, rgba(177,177,177,1) 0%, rgb(122, 122, 122) 100%);
+  background-size: 200% 100%;
+  animation: loading 1s ease-in-out infinite alternate;
+}
+
+@keyframes loading {
+  0% { background-position: 0% 0% }
+  100% { background-position: 100% 0% }
+}
+
 /*------------------------------ .header --------------------------*/
 .header {
   display: grid;
@@ -332,21 +344,14 @@ img {
   grid-auto-rows: 1fr;
   gap: 4rem 1rem;
   padding: var(--vertical) var(--wrapper_lateral);
+  grid-auto-rows: max-content;
+}
+.main--single {
+  grid-template-columns: 1fr;
+  gap: 3rem 1rem;
 }
 
 /*------------------------------ .post --------------------------*/
-.post [class*='__loading'] {
-  background: rgb(177,177,177);
-  background: linear-gradient(90deg, rgba(177,177,177,1) 0%, rgb(122, 122, 122) 100%);
-  background-size: 200% 100%;
-  animation: post_loading 1s ease-in-out infinite alternate;
-}
-
-@keyframes post_loading {
-  0% { background-position: 0% 0% }
-  100% { background-position: 100% 0% }
-}
-
 .post {
   display: grid;
   row-gap: 0.8rem;
@@ -513,4 +518,52 @@ img {
   letter-spacing: 0.2rem;
   font-family: var(--primary_font);
   text-align: center;
+}
+
+/*------------------------------ .post__comments --------------------------*/
+.post__comments {
+  display: grid;
+  gap: var(--vertical) var(--lateral);
+  grid-auto-rows: max-content;
+}
+
+.post__comments__title {
+  margin-bottom: 1rem;
+}
+
+/*------------------------------ .comment --------------------------*/
+.comment {
+  padding-left: var(--lateral);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content;
+  gap: 1rem;
+}
+
+.comment__photo {
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.comment__user {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.comment__user__loading {
+  width: 30%;
+  height: 2rem;
+}
+
+.comment__comment {
+  grid-row: 1;
+  grid-column: 2;
+  margin-top: 3rem;
+}
+
+.comment__comment__loading {
+  width: 100%;
+  height: 5rem;
 }
