@@ -59,35 +59,35 @@
 
   <main class="main">
     <article class="post">
-      <img src="" alt="" class="post__img">
-      <h2 class="post__title">Post title</h2>
-      <p class="post__info">Date</p>
-      <p class="post__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
-      <a href="" class="post__link">Link</a>
+      <img class="post__img post__img__loading">
+      <h2 class="post__title post__title__loading"></h2>
+      <p class="post__info post__info__loading"></p>
+      <p class="post__excerpt post__excerpt__loading"></p>
+      <a href="" class="post__link post__link__loading"></a>
     </article>
 
     <article class="post">
-      <img src="" alt="" class="post__img">
-      <h2 class="post__title">Post title</h2>
-      <p class="post__info">Date</p>
-      <p class="post__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
-      <a href="" class="post__link">Link</a>
+      <img class="post__img post__img__loading">
+      <h2 class="post__title post__title__loading"></h2>
+      <p class="post__info post__info__loading"></p>
+      <p class="post__excerpt post__excerpt__loading"></p>
+      <a href="" class="post__link post__link__loading"></a>
     </article>
 
     <article class="post">
-      <img src="" alt="" class="post__img">
-      <h2 class="post__title">Post title</h2>
-      <p class="post__info">Date</p>
-      <p class="post__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
-      <a href="" class="post__link">Link</a>
+      <img class="post__img post__img__loading">
+      <h2 class="post__title post__title__loading"></h2>
+      <p class="post__info post__info__loading"></p>
+      <p class="post__excerpt post__excerpt__loading"></p>
+      <a href="" class="post__link post__link__loading"></a>
     </article>
 
     <article class="post">
-      <img src="" alt="" class="post__img">
-      <h2 class="post__title">Post title</h2>
-      <p class="post__info">Date</p>
-      <p class="post__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis nam tempora omnis iure et reprehenderit eos dolore sit cum sint perspiciatis reiciendis porro, repudiandae voluptatibus dolor, possimus ratione ducimus.</p>
-      <a href="" class="post__link">Link</a>
+      <img class="post__img post__img__loading">
+      <h2 class="post__title post__title__loading"></h2>
+      <p class="post__info post__info__loading"></p>
+      <p class="post__excerpt post__excerpt__loading"></p>
+      <a href="" class="post__link post__link__loading"></a>
     </article>
   </main>
 
@@ -166,12 +166,15 @@
 
       const main = document.querySelector('.main');
 
+      while(main.firstChild) {
+        main.removeChild(main.lastChild);
+      }
+
       posts.forEach(post => {
         const postImgDOM = document.createElement('img');
         postImgDOM.className = 'post__img';
-        postImgDOM.src = 'imgurl';
-        postImgDOM.alt = 'altimg';
-
+        postImgDOM.src = 'https://picsum.photos/id/' + post.id + '/200';
+        postImgDOM.alt = post.title + ' image';
         const postTitleDOM = document.createElement('h2');
         postTitleDOM.className = 'post__title';
         postTitleDOM.textContent = post.title;

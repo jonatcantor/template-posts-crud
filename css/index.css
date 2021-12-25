@@ -301,17 +301,35 @@ img {
 }
 
 /*------------------------------ .post --------------------------*/
+.post [class*='__loading'] {
+  background: rgb(177,177,177);
+  background: linear-gradient(90deg, rgba(177,177,177,1) 0%, rgb(122, 122, 122) 100%);
+  background-size: 200% 100%;
+  animation: post_loading 1s ease-in-out infinite alternate;
+}
+
+@keyframes post_loading {
+  0% { background-position: 0% 0% }
+  100% { background-position: 100% 0% }
+}
+
 .post {
   display: grid;
   row-gap: 0.8rem;
 }
 
 .post__img {
-  
+  width: 100%;
+  aspect-ratio: 21 / 9;
 }
 
 .post__title {
   font-size: 1.5rem;
+}
+
+.post__title__loading {
+  min-height: 3rem;
+  width: 80%;
 }
 
 .post__info {
@@ -319,8 +337,17 @@ img {
   color: var(--dark_gray_color);
 }
 
+.post__info__loading {
+  min-height: 1.8rem;
+  width: 60%;
+}
+
 .post__excerpt {
   font-size: 1.1rem;
+}
+
+.post__excerpt__loading {
+  min-height: 8rem;
 }
 
 .post__link {
@@ -330,4 +357,9 @@ img {
   color: var(--background_color);
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.post__link__loading {
+  min-height: 2.2rem;
+  width: 40%;
 }
