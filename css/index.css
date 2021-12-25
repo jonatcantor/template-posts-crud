@@ -25,8 +25,8 @@
 
   --primary_color: #c90000;
   --secondary_color: #313131;
-  --light_gray_color: #b8b8b8;
-  --dark_gray_color: #555555;
+  --light_gray_color: #cccccc;
+  --dark_gray_color: #505050;
   --background_color: #ffffff;
   --primary_to_transparent_color: var(--primary_color);
   --background_to_primary_color: var(--background_color);
@@ -440,7 +440,11 @@ img {
   padding: var(--vertical) 1rem;
   display: grid;
   grid-auto-flow: column;
-  column-gap: 0.15rem;
+  column-gap: 0.2rem;
+  grid-template-columns: 1fr max-content;
+}
+.aside__search label {
+  display: none;
 }
 
 .aside__input {

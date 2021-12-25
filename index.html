@@ -24,7 +24,7 @@
       
       <nav>
         <ul class="stick__list">
-          <spam class="stick__text">Subscribe:</spam>
+          <li class="stick__text">Subscribe:</li>
           <li class="stick__list__element"><a href="#">Posts</a></li>
           <li class="stick__list__element"><a href="#">Comments</a></li>
           <li class="stick__list__element"><a href="#">Email</a></li>
@@ -38,7 +38,7 @@
         <span class="header__description"><a href="#">Web Site Description</a></span>
       </div>
 
-      <button onclick="altClassFromSelector('.header__lists', 'header__lists__open')" class="header__button"><svg viewBox="0 0 100 80"><rect width="100" height="20"></rect><rect y="30" width="100" height="20"></rect><rect y="60" width="100" height="20"></rect></svg></button>
+      <button onclick="altClassFromSelector('.header__lists', 'header__lists__open')" aria-label="Menu button" class="header__button"><svg viewBox="0 0 100 80"><rect width="100" height="20"></rect><rect y="30" width="100" height="20"></rect><rect y="60" width="100" height="20"></rect></svg></button>
     </div>
 
     <div class="advertise advertise--lg">
@@ -60,7 +60,7 @@
   <div class="wrapper">
     <main class="main">
       <article class="post">
-        <img class="post__img post__img__loading">
+        <img class="post__img post__img__loading" width="100%" height="auto">
         <h2 class="post__title post__title__loading"></h2>
         <p class="post__info post__info__loading"></p>
         <p class="post__excerpt post__excerpt__loading"></p>
@@ -116,29 +116,31 @@
       </div>
 
       <form method="" class="aside__search">
-        <input type="search" value="" name="search" class="aside__input" required>
-        <input type="submit" value="Search" class="aside__submit">
+        <label for="search">Search post</label>
+        <input type="search" value="" name="search" required id="search" class="aside__input">
+        <label for="submit">Submit button</label>
+        <input type="submit" value="Search" id="submit" class="aside__submit">
       </form>
 
       <section class="aside__section">
-        <h4 class="aside__title">Popular Posts</h4>
+        <h3 class="aside__title">Popular Posts</h3>
         <ul class="aside__posts"></ul>
       </section>
 
       <section class="aside__section">
-        <h4 class="aside__title">Flickr Photos</h4>
+        <h3 class="aside__title">Flickr Photos</h3>
         <ul class="aside__photos">
-          <li><a href="https://picsum.photos/id/500/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/500/200"></a></li>
-          <li><a href="https://picsum.photos/id/501/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/501/200"></a></li>
-          <li><a href="https://picsum.photos/id/502/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/502/200"></a></li>
-          <li><a href="https://picsum.photos/id/503/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/503/200"></a></li>
-          <li><a href="https://picsum.photos/id/504/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/504/200"></a></li>
-          <li><a href="https://picsum.photos/id/505/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/505/200"></a></li>
+          <li><a href="https://picsum.photos/id/500/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/500/200" alt="photo 1"></a></li>
+          <li><a href="https://picsum.photos/id/501/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/501/200" alt="photo 2"></a></li>
+          <li><a href="https://picsum.photos/id/502/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/502/200" alt="photo 3"></a></li>
+          <li><a href="https://picsum.photos/id/503/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/503/200" alt="photo 4"></a></li>
+          <li><a href="https://picsum.photos/id/504/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/504/200" alt="photo 5"></a></li>
+          <li><a href="https://picsum.photos/id/505/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/505/200" alt="photo 6"></a></li>
         </ul>
       </section>
 
       <section class="aside__section">
-        <h4 class="aside__title">Featured Video</h4>
+        <h3 class="aside__title">Featured Video</h3>
 
         <video class="aside__video" autoplay playsinline muted controls loop>
           <source src="./videos/fox.mp4" type="video/mp4">
