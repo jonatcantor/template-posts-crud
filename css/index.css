@@ -356,6 +356,13 @@ img {
   display: grid;
   row-gap: 0.8rem;
 }
+.post--delete {
+  border: dashed red 0.2rem;
+}
+.post--delete * {
+  transition: opacity 1s;
+  opacity: 0;
+}
 
 .post__img {
   width: 100%;
@@ -365,7 +372,7 @@ img {
 .post__title {
   font-size: 1.4rem;
 }
-[class='post'] .post__title {
+[class='post'] .post__title, [class='post post--delete'] .post__title {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -391,7 +398,7 @@ img {
 .post__excerpt {
   font-size: 1.1rem;
 }
-[class='post'] .post__excerpt {
+[class='post'] .post__excerpt, [class='post post--delete'] .post__excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -417,6 +424,15 @@ img {
 .post__link__loading {
   min-height: 2.2rem;
   width: 40%;
+}
+
+.post__delete {
+  background: rgb(255, 108, 23);
+  color: var(--background_color);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /*------------------------------ .wrapper --------------------------*/
