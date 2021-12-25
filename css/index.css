@@ -47,6 +47,9 @@
   --stick_list_columns: 1fr;
 
   --main_lateral: 2rem;
+  --main_columns: 1fr;
+
+  --center_to_left: center;
 }
 
 @media (min-width: 320px) {
@@ -78,6 +81,10 @@
 
     --stick_list_grid_direction: column;
     --stick_list_columns: max-content;
+
+    --main_columns: 1fr 1fr;
+
+    --center_to_left: left;
   }
 }
 
@@ -295,7 +302,7 @@ img {
 .main {
   padding: var(--vertical) var(--main_lateral);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--main_columns);
   grid-auto-rows: min-content;
   gap: 2.5rem 2rem;
 }
@@ -357,6 +364,7 @@ img {
   color: var(--background_color);
   font-size: 1.1rem;
   font-weight: bold;
+  text-align: var(--center_to_left);
 }
 
 .post__link__loading {
