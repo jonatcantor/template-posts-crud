@@ -364,6 +364,8 @@ img {
 
 .post__title {
   font-size: 1.4rem;
+}
+[class='post'] .post__title {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -388,6 +390,8 @@ img {
 
 .post__excerpt {
   font-size: 1.1rem;
+}
+[class='post'] .post__excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

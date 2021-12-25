@@ -141,79 +141,101 @@
 
   <script src="./js/index.js"></script>
   <script>
-    // const getPosts = async () => {
-    //   const response = await fetch('https://jsonplaceholder.typicode.com/posts', { method: 'GET' });
+    const getUrlParameter = (param) => {
+      const url = window.location.href;
+      let parameters = url.split('?');
 
-    //   if(!response.ok) return { 'error' : response.status };
+      if(parameters.length != 2) return { 'error': 'parameters not found' };
+      parameters = parameters[1].split('&');
 
-    //   const dataJson = await response.json();
+      if(parameters.length != 1) return { 'error': 'parameters not valids' };
 
-    //   return dataJson;
-    // }
+      const parameter = parameters[0].split('=');
+      if(parameter[0] != param) return { 'error': 'parameters not valids' };
 
-    // (async () => {
-    //   const posts = await getPosts();
+      return parameter[1];
+    }
 
-    //   if(posts.error) return;
+    const getPost = async (idPost) => {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts/' + idPost, { method: 'GET' });
 
-    //   const main = document.querySelector('.main');
+      if(!response.ok) return { 'error' : response.status };
 
-    //   while(main.firstChild) {
-    //     main.removeChild(main.lastChild);
-    //   }
+      const dataJson = await response.json();
 
-    //   posts.forEach(post => {
-    //     const postImgDOM = document.createElement('img');
-    //     postImgDOM.loading = 'lazy';
-    //     postImgDOM.className = 'post__img';
-    //     postImgDOM.srcset = 'https://picsum.photos/id/' + post.id + '/500 500w, https://picsum.photos/id/' + post.id + '/800 800w';
-    //     postImgDOM.sizes = '(min-width: 0px) 480px, (min-width: 768px) 768px, (min-width: 1024px) 1024px';
-    //     postImgDOM.alt = post.title + ' image';
+      return dataJson;
+    }
 
-    //     const postTitleDOM = document.createElement('h2');
-    //     postTitleDOM.className = 'post__title';
-    //     postTitleDOM.textContent = post.title;
+    const getPosts = async () => {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts', { method: 'GET' });
 
-    //     const postDateDOM = document.createElement('p');
-    //     postDateDOM.className = 'post__info';
-    //     postDateDOM.textContent = 'postinfo';
+      if(!response.ok) return { 'error' : response.status };
 
-    //     const postTextDOM = document.createElement('p');
-    //     postTextDOM.className = 'post__excerpt';
-    //     postTextDOM.textContent = post.body;
+      const dataJson = await response.json();
 
-    //     const postLinkDOM = document.createElement('a');
-    //     postLinkDOM.className = 'post__link';
-    //     postLinkDOM.textContent = 'Continue reading';
-    //     postLinkDOM.href = './posts.html/?id=' + post.id;
+      return dataJson;
+    }
+    
+    (async () => {
+      const idPost = getUrlParameter('id');
 
-    //     const postDOM = document.createElement('article');
-    //     postDOM.className = 'post';
-    //     postDOM.appendChild(postImgDOM);
-    //     postDOM.appendChild(postTitleDOM);
-    //     postDOM.appendChild(postDateDOM);
-    //     postDOM.appendChild(postTextDOM);
-    //     postDOM.appendChild(postLinkDOM);
+      if(idPost.error) return;
 
-    //     main.appendChild(postDOM);
-    //   });
+      const post = await getPost(idPost);
 
-    //   const asidePosts = document.querySelector('.aside__posts');
+      if(post.error) return;
+      
+      const main = document.querySelector('.main');
+      main.removeChild(main.firstElementChild);
 
-    //   const popularPosts = posts.slice(0, 5);
+      const postImgDOM = document.createElement('img');
+      postImgDOM.loading = 'lazy';
+      postImgDOM.className = 'post__img';
+      postImgDOM.srcset = 'https://picsum.photos/id/' + post.id + '/500 500w, https://picsum.photos/id/' + post.id + '/800 800w';
+      postImgDOM.sizes = '(min-width: 0px) 480px, (min-width: 768px) 768px, (min-width: 1024px) 1024px';
+      postImgDOM.alt = post.title + ' image';
 
-    //   popularPosts.forEach((post) => {
-    //     const postLiDOM = document.createElement('li');
+      const postTitleDOM = document.createElement('h2');
+      postTitleDOM.className = 'post__title';
+      postTitleDOM.textContent = post.title;
 
-    //     const postLinkDOM = document.createElement('a');
-    //     postLinkDOM.textContent = post.title;
-    //     postLinkDOM.href = './posts.html/?id=' + post.id;
+      const postDateDOM = document.createElement('p');
+      postDateDOM.className = 'post__info';
+      postDateDOM.textContent = 'postinfo';
 
-    //     postLiDOM.appendChild(postLinkDOM);
+      const postTextDOM = document.createElement('p');
+      postTextDOM.className = 'post__excerpt';
+      postTextDOM.textContent = post.body;
 
-    //     asidePosts.appendChild(postLiDOM);
-    //   });
-    // })();
+      const postDOM = document.createElement('article');
+      postDOM.className = 'post post__single';
+      postDOM.append(postImgDOM);
+      postDOM.append(postTitleDOM);
+      postDOM.append(postDateDOM);
+      postDOM.append(postTextDOM);
+
+      main.prepend(postDOM);
+
+      const asidePosts = document.querySelector('.aside__posts');
+
+      const posts = await getPosts();
+
+      if(posts.error) return;
+
+      const popularPosts = posts.slice(0, 5);
+
+      popularPosts.forEach((post) => {
+        const postLiDOM = document.createElement('li');
+
+        const postLinkDOM = document.createElement('a');
+        postLinkDOM.textContent = post.title;
+        postLinkDOM.href = './posts.html?id=' + post.id;
+
+        postLiDOM.append(postLinkDOM);
+
+        asidePosts.append(postLiDOM);
+      });
+    })();
   </script>
 </body>
 </html>
