@@ -160,6 +160,16 @@
       <textarea rows="10" placeholder="Post body" required name="body" aria-label="Post body" class="post__add__input"></textarea>
       <input type="hidden" name="userId" value="1" required>
       <input type="submit" value="Add post" class="post__button post__button--form">
+      <button
+        onclick="
+          altClassFromSelector('post__add__form__box--show', '.post__add__form__box');
+          altClassFromSelector('post__button--hidde', '#addPost');
+          return false;
+        "
+        class="post__add__form__close"
+      >
+        x
+      </button>
     </form>
   </div>
 
@@ -255,6 +265,8 @@
       if(!response.ok) return { 'error': response.status };
 
       const dataJson = await response.json();
+
+      form.reset();
 
       return dataJson;
     }

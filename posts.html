@@ -124,7 +124,7 @@
       <section class="aside__section">
         <h3 class="aside__title">Featured Video</h3>
 
-        <video class="aside__video" playsinline muted loop></video>
+        <video class="aside__video video__loading" playsinline muted loop></video>
       </section>
     </aside>
   </div>
@@ -221,7 +221,7 @@
 
       const postComments = await getPostComments(postId);
 
-      if(!postComments.error) {
+      if(!postComments.error && postComments.length > 0) {
         main.removeChild(main.lastElementChild);
 
         postComments.forEach((comment) => {
