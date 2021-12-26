@@ -61,20 +61,20 @@
   <div class="wrapper">
     <main class="main main--single">
       <article class="post">
-        <img class="post__img post__img__loading" width="100%" height="auto">
-        <h2 class="post__title post__title__loading"></h2>
-        <p class="post__info post__info__loading"></p>
-        <p class="post__excerpt post__excerpt__loading"></p>
-        <a href="" class="post__link post__link__loading"></a>
+        <div class="post__img post__img__loading"></div>
+        <div class="post__title post__title__loading"></div>
+        <div class="post__info post__info__loading"></div>
+        <div class="post__excerpt post__excerpt__loading"></div>
+        <div class="post__link post__link__loading"></div>
       </article>
 
       <section class="post__comments">
         <h3 class="post__comments__title">Post comments</h3>
 
         <article class="comment">
-          <img class="comment__photo comment__photo__loading" width="100%" height="auto">
-          <h4 class="comment__user comment__user__loading"></h4>
-          <p class="comment__comment comment__comment__loading"></p>
+          <div class="comment__photo comment__photo__loading"></div>
+          <div class="comment__user comment__user__loading"></div>
+          <div class="comment__comment comment__comment__loading"></div>
         </article>
       </section>
     </main>
@@ -115,12 +115,12 @@
       <section class="aside__section">
         <h3 class="aside__title">Flickr Photos</h3>
         <ul class="aside__photos">
-          <li><a href="https://picsum.photos/id/500/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/500/200" alt="photo 1" width="200px" height="200px"></a></li>
-          <li><a href="https://picsum.photos/id/501/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/501/200" alt="photo 2" width="200px" height="200px"></a></li>
-          <li><a href="https://picsum.photos/id/502/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/502/200" alt="photo 3" width="200px" height="200px"></a></li>
-          <li><a href="https://picsum.photos/id/503/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/503/200" alt="photo 4" width="200px" height="200px"></a></li>
-          <li><a href="https://picsum.photos/id/504/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/504/200" alt="photo 5" width="200px" height="200px"></a></li>
-          <li><a href="https://picsum.photos/id/505/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/505/200" alt="photo 6" width="200px" height="200px"></a></li>
+          <li><a href="https://picsum.photos/id/500/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/500/200" alt="photo 1" width="200" height="200"></a></li>
+          <li><a href="https://picsum.photos/id/501/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/501/200" alt="photo 2" width="200" height="200"></a></li>
+          <li><a href="https://picsum.photos/id/502/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/502/200" alt="photo 3" width="200" height="200"></a></li>
+          <li><a href="https://picsum.photos/id/503/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/503/200" alt="photo 4" width="200" height="200"></a></li>
+          <li><a href="https://picsum.photos/id/504/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/504/200" alt="photo 5" width="200" height="200"></a></li>
+          <li><a href="https://picsum.photos/id/505/200" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/id/505/200" alt="photo 6" width="200" height="200"></a></li>
         </ul>
       </section>
 
@@ -202,8 +202,6 @@
         postImgDOM.srcset = 'https://picsum.photos/id/' + post.id + '/500 500w, https://picsum.photos/id/' + post.id + '/800 800w';
         postImgDOM.sizes = '(min-width: 0px) 480px, (min-width: 768px) 768px, (min-width: 1024px) 1024px';
         postImgDOM.alt = post.title + ' image';
-        postImgDOM.width = '100%';
-        postImgDOM.height = 'auto';
 
         const postTitleDOM = document.createElement('h2');
         postTitleDOM.className = 'post__title';
@@ -237,8 +235,6 @@
           commentPhotoDOM.classList = 'comment__photo';
           commentPhotoDOM.src = 'https://picsum.photos/id/' + (999 + comment.id) + '/100';
           commentPhotoDOM.alt = 'User image';
-          commentPhotoDOM.width = '100%';
-          commentPhotoDOM.height = 'auto';
           
           const commentUserDOM = document.createElement('h4');
           commentUserDOM.classList = 'comment__user';
