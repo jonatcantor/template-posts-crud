@@ -1,6 +1,6 @@
 const header = document.querySelector('.header');
 
-const altClassFromSelector = (selector, className) => {
+const altClassFromSelector = (className, selector) => {
   const elements = document.querySelectorAll(selector);
 
   elements.forEach((element) => {
