@@ -195,7 +195,6 @@
         main.removeChild(main.firstElementChild);
 
         const postImgDOM = document.createElement('img');
-        postImgDOM.loading = 'lazy';
         postImgDOM.className = 'post__img';
         postImgDOM.srcset = 'https://picsum.photos/id/' + post.id + '/500 500w, https://picsum.photos/id/' + post.id + '/800 800w';
         postImgDOM.sizes = '(min-width: 0px) 480px, (min-width: 768px) 768px, (min-width: 1024px) 1024px';
