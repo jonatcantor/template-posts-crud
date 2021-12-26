@@ -7,6 +7,16 @@
   border: none;
 }
 
+@font-face {
+  font-family: 'Roboto Slab', serif;
+  src: url('./../fonts/roboto_slab/RobotoSlab-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url(./../fonts/roboto/Roboto-Regular.ttf);
+}
+
 :root {
   --font_size: 14px;
 
@@ -20,8 +30,8 @@
   --block_mobile_d: block;
   --grid_desktop_d: none;
 
-  --primary_font: 'Roboto Slab', serif;;
-  --secondary_font: 'Roboto', sans-serif;;
+  --primary_font: 'Roboto Slab', serif;
+  --secondary_font: 'Roboto', sans-serif;
 
   --primary_color: #c90000;
   --secondary_color: #313131;
