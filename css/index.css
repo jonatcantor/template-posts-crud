@@ -261,6 +261,7 @@ textarea {
   list-style-type: none;
   grid-auto-columns: var(--stick_list_columns);
   row-gap: 1rem;
+  font-size: 0.8rem;
 }
 
 .stick__text {
@@ -284,6 +285,7 @@ textarea {
 .stick__list__element a {
   color: var(--primary_color);
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .stick__list__element:not(:last-child)::after {
@@ -354,6 +356,9 @@ textarea {
 
 .tag__list__element a {
   color: var(--background_color);
+}
+.tag__list__element:hover a {
+  color: var(--primary_color);
 }
 
 /*------------------------------ .main --------------------------*/
