@@ -2,6 +2,15 @@ const header = document.querySelector('.header');
 
 window.addEventListener('load', () => {
   const video = document.querySelector('.aside__video');
+  
+  const source = document.createElement('source');
+  source.src = './../videos/fox.mp4';
+  source.type = 'video/mp4';
+
+  video.append(source);
+
+  altClassFromSelector('video__loading', '.aside__video');
+
   video.load();
   video.play();
 });
