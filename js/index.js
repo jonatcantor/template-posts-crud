@@ -1,5 +1,11 @@
 const header = document.querySelector('.header');
 
+window.addEventListener('load', () => {
+  const video = document.querySelector('.aside__video');
+  video.load();
+  video.play();
+});
+
 const altClassFromSelector = (className, selector) => {
   const elements = document.querySelectorAll(selector);
 
