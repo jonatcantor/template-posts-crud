@@ -10,7 +10,7 @@
 :root {
   --font_size: 14px;
 
-  --max_width: 100vw;
+  --max_width: 100%;
 
   --mobile: 1;
   --no_mobile: calc(1 - var(--mobile));
