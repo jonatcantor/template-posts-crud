@@ -218,7 +218,7 @@ textarea {
 
   background-color: var(--background_color);
 
-  transform: translateX(calc((100vw - var(--max_width)) / -2));
+  transform: translateX(calc((100% - var(--max_width)) / -2));
 
   max-width: var(--max_width);
 }
@@ -316,7 +316,7 @@ textarea {
 
   position: absolute;
   top: var(--advertise_lg_top);
-  left: calc((50vw - (var(--max_width) - var(--max_width))) * var(--no_mobile) + (var(--mobile) * var(--lateral)));
+  left: calc((50% - (var(--max_width) - var(--max_width))) * var(--no_mobile) + (var(--mobile) * var(--lateral)));
   transform: translateX(calc((var(--max_width) - var(--max_width)) / 2 - (var(--lateral) * var(--no_mobile))));
 
   max-width: calc(var(--max_width) / 2 + (var(--max_width) * var(--mobile)));
