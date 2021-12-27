@@ -20,7 +20,7 @@
 :root {
   --font_size: 14px;
 
-  --max_width: 100%;
+  --max_width: 100vw;
 
   --mobile: 1;
   --no_mobile: calc(1 - var(--mobile));
@@ -212,13 +212,13 @@ textarea {
 
   position: fixed;
   top: calc(var(--advertise_lg_top) * var(--no_mobile));
-  left: calc(100% - var(--max_width));
+  left: calc(100vw - var(--max_width));
   width: 100%;
   padding: var(--header_vertical) var(--lateral);
 
   background-color: var(--background_color);
 
-  transform: translateX(calc((100vw - var(--max_width)) / -2 + var(--lateral)));
+  transform: translateX(calc((100vw - var(--max_width)) / -2));
 
   max-width: var(--max_width);
 }
